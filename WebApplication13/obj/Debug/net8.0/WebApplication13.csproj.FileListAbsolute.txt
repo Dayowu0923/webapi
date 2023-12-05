@@ -142,3 +142,4 @@ C:\Users\user\source\repos\WebApplication13\WebApplication13\bin\Debug\net8.0\ru
 C:\Users\user\source\repos\WebApplication13\WebApplication13\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\user\source\repos\WebApplication13\WebApplication13\bin\Debug\net8.0\WebApplication13.xml
 C:\Users\user\source\repos\WebApplication13\WebApplication13\obj\Debug\net8.0\WebApplication13.xml
+C:\Users\user\source\repos\WebApplication13\WebApplication13\obj\Debug\net8.0\WebApplication13.sourcelink.json
