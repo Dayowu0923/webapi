@@ -5,7 +5,7 @@ using WebApplication13.Models;
 namespace WebApplication13.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class LoginController : ControllerBase
     {
         private readonly IDistributedCache _cache;

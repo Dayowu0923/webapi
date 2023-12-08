@@ -9,7 +9,7 @@ using System.Linq;
 namespace WebApplication13.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CaptchaServiceController : ControllerBase
     {
 

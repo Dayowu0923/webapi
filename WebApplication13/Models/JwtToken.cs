@@ -42,6 +42,15 @@ namespace WebApplication13.Models
         {
             return GenerateJwtToken(username);
         }
+
+        public string ClaimToken(string token)
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jwtToken = handler.ReadJwtToken(token);
+            var userIdClaim = jwtToken.Claims.FirstOrDefault(claim => claim.Type == "sub");
+            return userIdClaim.Value;
+        }
+
         //[HttpGet("securedata")]
         //[Authorize]
         //public IActionResult GetSecureData()
