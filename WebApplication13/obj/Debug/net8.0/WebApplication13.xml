@@ -4,6 +4,41 @@
         <name>WebApplication13</name>
     </assembly>
     <members>
+        <member name="P:WebApplication13.Dtos.TbItemCodeDto.Id">
+            <summary>
+            PK自動編碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemCodeDto.Item_no">
+            <summary>
+            基本代碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemCodeDto.Item_name">
+            <summary>
+            基本代碼名稱
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemCodeDto.Mid">
+            <summary>
+            代碼Id
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemTypeDto.Id">
+            <summary>
+            PK自動編碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemTypeDto.No">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemTypeDto.Name">
+            <summary>
+            代碼名稱
+            </summary>
+        </member>
         <member name="P:WebApplication13.Models.CsTbCar.Dept">
             <summary>
             區別

@@ -8,10 +8,18 @@ namespace WebApplication13.Profiles
     {
         public MappingProfile() 
         {
-            CreateMap<TbItemCodeDto, TbItemType>()
-               .ForMember(dest => dest.Udate, opt => opt.MapFrom(src => DateTime.Now)) // 設置更新時間為現在
-               .ForMember(dest => dest.Cdate, opt => opt.MapFrom(src => DateTime.Now)) // 設置創建時間為現在
-               .ForMember(dest => dest.Status, opt => opt.MapFrom(src => true)); // 設置狀態為 true
+            CreateMap<TbItemTypeDto, TbItemType>()
+               .ForMember(dest => dest.Udate, opt => opt.MapFrom(src => DateTime.Now)) 
+               .ForMember(dest => dest.Cdate, opt => opt.MapFrom(src => DateTime.Now)) 
+               .ForMember(dest => dest.Status, opt => opt.MapFrom(src => true)); 
+
+            CreateMap<TbItemCodeDto, TbItemCode>()
+             .ForMember(dest => dest.ItemTypeid, opt => opt.MapFrom(src => src.Mid))
+             .ForMember(dest => dest.ItemNo, opt => opt.MapFrom(src => src.Item_no))
+             .ForMember(dest => dest.ItemName, opt => opt.MapFrom(src => src.Item_name))
+             .ForMember(dest => dest.Udate, opt => opt.MapFrom(src => DateTime.Now)) 
+             .ForMember(dest => dest.Cdate, opt => opt.MapFrom(src => DateTime.Now))
+             .ForMember(dest => dest.ActiveFlag, opt => opt.MapFrom(src => true)); 
         }
     }
 }
