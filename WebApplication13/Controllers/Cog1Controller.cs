@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication13.Models;
-using AutoMapper;
 using WebApplication13.Dtos;
 using Microsoft.EntityFrameworkCore;
-using WebApplication13.Profiles;
+using WebApplication13.Services;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WebApplication13.Controllers
@@ -13,62 +11,25 @@ namespace WebApplication13.Controllers
     [ApiController]
     public class Cog1Controller : ControllerBase
     {
-        private readonly _2023gtafContext _gtafContext;
-        private readonly IMapper _imapper;
-        private readonly JwtToken _auth;
-        public Cog1Controller(_2023gtafContext gtafContext, IMapper imapper, JwtToken auth)
+        private readonly Cog1Service _cog1Service;
+        public Cog1Controller(Cog1Service cog1Service)
         {
-            _gtafContext = gtafContext;
-            _imapper = imapper;
-             _auth = auth;
+            _cog1Service = cog1Service;
         }
-
         // GET: api/<Cog1Controller>
         [HttpGet]
         [Authorize]
         public async Task<IActionResult> Get()
         {
-            var item = await (from tbl in _gtafContext.TbItemTypes
-                                where tbl.Status == true
-                                select new
-                                {
-                                    Id = tbl.Id,
-                                    No = tbl.No,
-                                    Name = tbl.Name,
-                                    Udate = tbl.Udate.HasValue ? tbl.Udate.Value.ToString("yyyy-MM-dd HH:mm:ss") : "",
-                                    Uuser = tbl.Uuser,
-                                }
-                     ).ToListAsync();
-            return Ok(item);
-
-            //var items = _gtafContext.TbItemTypes.Where(tbl => tbl.Status == true).ToList();
-            //var itemDtos = _imapper.Map<List<TbItemCodeDto>>(items);
-
-            //return Ok(itemDtos);
+           
+            return await _cog1Service.Get();
         }
-   
         // GET api/<Cog1Controller>/5
         [HttpGet("{id}")]
         [Authorize]
         public async Task<IActionResult> Get(int id)
         {
-            var item = await(from tbl in _gtafContext.TbItemTypes
-                             where tbl.Status == true && tbl.Id == id
-                             select new
-                             {
-                                 Id = tbl.Id,
-                                 No = tbl.No,
-                                 Name = tbl.Name,
-                                 Udate = tbl.Udate.HasValue ? tbl.Udate.Value.ToString("yyyy-MM-dd HH:mm:ss") : "",
-                                 Uuser = tbl.Uuser,
-                             }
-                   ).FirstOrDefaultAsync();
-           
-            if (item == null)
-            {
-                return BadRequest("找不到資料");
-            }
-            return Ok(item);
+            return await _cog1Service.Get(id);
         }
 
         // POST api/<Cog1Controller>
@@ -76,16 +37,7 @@ namespace WebApplication13.Controllers
         [Authorize]
         public async Task<IActionResult> Post([FromBody] TbItemTypeDto value)
         {
-            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-            string user = _auth.ClaimToken(token);
-            var config = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>());
-            var mapper = config.CreateMapper();
-            TbItemType entity = mapper.Map<TbItemType>(value);
-            entity.Cuser = user;
-            entity.Uuser = user;
-            _gtafContext.TbItemTypes.Add(entity);
-            await _gtafContext.SaveChangesAsync();
-            return Ok();
+            return await _cog1Service.Post(value);
         }
 
         // PUT api/<Cog1Controller>/5
@@ -93,42 +45,14 @@ namespace WebApplication13.Controllers
         [Authorize]
         public async Task<IActionResult> Put(int id, [FromBody] TbItemTypeDto value)
         {
-            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-            string user = _auth.ClaimToken(token);
-            if (id != value.Id)
-            {
-                return BadRequest();
-            }
-            var item = await _gtafContext.TbItemTypes.FindAsync(id);
-            if(item == null)
-            {
-                return NotFound("找不到資料");
-            }
-            item.Udate = DateTime.Now;
-            item.Uuser = user;
-            item.Name = value.Name;
-            item.No = value.No;
-            await _gtafContext.SaveChangesAsync();
-            return NoContent();
+            return await _cog1Service.Put(id,value);
         }
         // DELETE api/<Cog1Controller>/5
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
-            bool item_sub = await _gtafContext.TbItemCodes.AnyAsync(item => item.ItemTypeid == id);
-            if (item_sub)
-            {
-                return BadRequest("底下有資料");
-            }
-            var item = await _gtafContext.TbItemTypes.FindAsync(id);
-            if (item == null)
-            {
-                return NotFound("找不到資料");
-            }
-            item.Status = false;
-            await _gtafContext.SaveChangesAsync();
-            return NoContent();
+            return await _cog1Service.Delete(id);
         }
     }
 }

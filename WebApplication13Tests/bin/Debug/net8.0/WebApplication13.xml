@@ -1,0 +1,845 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplication13</name>
+    </assembly>
+    <members>
+        <member name="P:WebApplication13.Dtos.TbItemCodeDto.Id">
+            <summary>
+            PK自動編碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemCodeDto.Item_no">
+            <summary>
+            基本代碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemCodeDto.Item_name">
+            <summary>
+            基本代碼名稱
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemCodeDto.Mid">
+            <summary>
+            代碼Id
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemTypeDto.Id">
+            <summary>
+            PK自動編碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemTypeDto.No">
+            <summary>
+            代碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Dtos.TbItemTypeDto.Name">
+            <summary>
+            代碼名稱
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Dept">
+            <summary>
+            區別
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Origin">
+            <summary>
+            來源
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Num">
+            <summary>
+            財產編號
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.MakeYearMonth">
+            <summary>
+            出廠年月
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.IsMachine">
+            <summary>
+            是否機具
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.BuyDate">
+            <summary>
+            購置日期
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.StartUseDate">
+            <summary>
+            開始使用日期
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.EndUseDate">
+            <summary>
+            車輛歸屬日期迄
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.WorkArea">
+            <summary>
+            作業廠址
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.NewVehicleNo">
+            <summary>
+            車輛編號(新)
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.OldVehicleNo">
+            <summary>
+            車輛編號(舊)
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleKindId">
+            <summary>
+            主種類
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleKindId2">
+            <summary>
+            次種類
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleColor">
+            <summary>
+            顏色
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Power">
+            <summary>
+            能源種類
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Status">
+            <summary>
+            使用狀況
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.EpPeriod">
+            <summary>
+            環保期數
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Usage">
+            <summary>
+            主要用途
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleMake">
+            <summary>
+            廠牌
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.ScrapDate">
+            <summary>
+            報廢日期
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Keeper">
+            <summary>
+            保管人
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Using">
+            <summary>
+            使用人
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.CarLicence">
+            <summary>
+            車牌
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleModel">
+            <summary>
+            車身式樣
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Cylinder">
+            <summary>
+            汽缸排氣量
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleLoad">
+            <summary>
+            載重
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleWeight">
+            <summary>
+            總重
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleVolume">
+            <summary>
+            容積(立方數)
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Passenger">
+            <summary>
+            乘客人數(不含司機)
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Cost">
+            <summary>
+            購置價格(費用)
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Source">
+            <summary>
+            購置經費來源
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.LicenseDate">
+            <summary>
+            發照日期
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.EngineNumber">
+            <summary>
+            引擎號碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.BodyNumber">
+            <summary>
+            車身號碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.OtherItem">
+            <summary>
+            其他附屬設備
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Urea">
+            <summary>
+            是否需添加尿素
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Memo">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Pic1">
+            <summary>
+            前
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Pic2">
+            <summary>
+            後
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Pic3">
+            <summary>
+            左
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Pic4">
+            <summary>
+            右
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Telecom">
+            <summary>
+            電信業者
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.TelNumber">
+            <summary>
+            門號
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Brand">
+            <summary>
+            車機品牌
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.MonthlyFee">
+            <summary>
+            月租費
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.CarWeight">
+            <summary>
+            車重
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.InsideSystem">
+            <summary>
+            是否已納入清潔車即時衛星
+            定位便民查詢及管理系統
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleColorId">
+            <summary>
+            顏色ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleModelId">
+            <summary>
+            車身式樣ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.PowerId">
+            <summary>
+            能源種類ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.StatusId">
+            <summary>
+            使用狀況ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.EpPeriodId">
+            <summary>
+            環保期數ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.SourceId">
+            <summary>
+            購置經費來源ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.UsageId">
+            <summary>
+            主要用途ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleMakeId">
+            <summary>
+            廠牌ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.TelecomId">
+            <summary>
+            電信ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.BrandId">
+            <summary>
+            電信品牌ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.IsFuelTax">
+            <summary>
+            是否繳納燃料稅
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.IsLicenseTax">
+            <summary>
+            是否繳納牌照稅
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.FuelTax">
+            <summary>
+            燃料稅
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.LicenseTax">
+            <summary>
+            牌照稅
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.LicenseType">
+            <summary>
+            牌照類別
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.FrontTireSize">
+            <summary>
+            前輪尺寸
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.RearTireSize">
+            <summary>
+            後輪尺寸
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.LicenseTypeId">
+            <summary>
+            牌照類別ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.FrontTireSizeId">
+            <summary>
+            前輪尺寸ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.RearTireSizeId">
+            <summary>
+            後輪尺寸ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.FrontTireNum">
+            <summary>
+            前輪輪數
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.RearTireNum">
+            <summary>
+            後輪輪數
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.Pic5">
+            <summary>
+            行車執照照片
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.MileToMaintain">
+            <summary>
+            每次需保養的公里數
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VerifyStatus">
+            <summary>
+            審核結果
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VerifyId">
+            <summary>
+            審核人員ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VerifyDate">
+            <summary>
+            審核日期
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VerifyTime">
+            <summary>
+            審核時間
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleRegistKindId">
+            <summary>
+            行照車輛種類ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.VehicleBudgetKindId">
+            <summary>
+            預算車輛種類ID
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.CompulsoryInsuranceDate">
+            <summary>
+            強制險到期日
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCar.AnyRiskDate">
+            <summary>
+            任意險到期日
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarType.Id">
+            <summary>
+            自動編碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarType.Type">
+            <summary>
+            1:車輛 2:機具
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarType.MNum">
+            <summary>
+            車輛/機具種類代碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarType.MName">
+            <summary>
+            車輛/機具種類名稱
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarType.MMemo">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarType.Cdate">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarType.Udate">
+            <summary>
+            更新日期
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarType.Cuser">
+            <summary>
+            建立人員
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarType.Uuser">
+            <summary>
+            更新人員
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarTypeSub.Id">
+            <summary>
+            自動編碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarTypeSub.MId">
+            <summary>
+            對應CS_tbCarType.id
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarTypeSub.SNum">
+            <summary>
+            編號
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarTypeSub.SName">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarTypeSub.SMemo">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarTypeSub.Cdate">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarTypeSub.Udate">
+            <summary>
+            更新日期
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarTypeSub.Cuser">
+            <summary>
+            建立人員
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbCarTypeSub.Uuser">
+            <summary>
+            更新人員
+            </summary>
+        </member>
+        <member name="T:WebApplication13.Models.CsTbMenu">
+            <summary>
+            網站目錄
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbMenu.MenuId">
+            <summary>
+            pk
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbMenu.MenuName">
+            <summary>
+            選單名稱
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbMenu.MenuUrl">
+            <summary>
+            預設連結
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbMenu.MenuClass">
+            <summary>
+            所屬階層
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbMenu.MenuLastId">
+            <summary>
+            上一階選單id 
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbMenu.MenuSort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbMenu.MenuStatus">
+            <summary>
+            1.啟用(預設) 0.關閉
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTbMenu.MenuIcon">
+            <summary>
+            功能icon
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTcFixItemSub.Inventory">
+            <summary>
+            庫存數量
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTcFixItemSub.InventorySafe">
+            <summary>
+            安全庫存數量
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.CsTcFixItemSub.Unit">
+            <summary>
+            單位
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.LoginModel.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.LoginModel.Password">
+            <summary>
+            帳號
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:WebApplication13.Models.LoginModel.Captcha" -->
+        <member name="P:WebApplication13.Models.TbCar.AreaType">
+            <summary>
+            (0無1北屯東2北屯西)
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCar.Pointnumber">
+            <summary>
+            判斷是否有踩清運點用
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCar.Container">
+            <summary>
+            容積
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCar.Usetype">
+            <summary>
+            使用狀態
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCar.Carnote">
+            <summary>
+            車管備註
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCar.Notinxls">
+            <summary>
+            車機清冊排除(1是0否)
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.OusideStop">
+            <summary>
+            在外暫停
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.OusideShutdown">
+            <summary>
+            場外關機
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.InsideShutdown">
+            <summary>
+            場內關機
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.Disconnect">
+            <summary>
+            斷訊
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.DisconnectShutdown">
+            <summary>
+            斷訊/關機
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.Overspeed30">
+            <summary>
+            超速30秒以上
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.Overspeed120">
+            <summary>
+            超速120秒以上
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.Overspeed0">
+            <summary>
+            超速30秒以下
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.Overspeed60">
+            <summary>
+            超速60秒以上
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbCarRecord.RunTime2">
+            <summary>
+            區隊圍籬外行駛時間
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbEmp.FaceDetect">
+            <summary>
+            人臉
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbEmp.Finger">
+            <summary>
+            指紋
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbEmp.Fingerprint">
+            <summary>
+            是否有指紋
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.Id">
+            <summary>
+            自動編碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.ItemTypeid">
+            <summary>
+            對應tbItemType.id
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.ItemNo">
+            <summary>
+            編號
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.ItemName">
+            <summary>
+            名稱
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.Descript">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.ActiveFlag">
+            <summary>
+            啟用狀態
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.Sort">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.Udate">
+            <summary>
+            更新時間
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.Cdate">
+            <summary>
+            建立時間
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.Uuser">
+            <summary>
+            更新者
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemCode.Cuser">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemType.Id">
+            <summary>
+            自動編碼
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemType.No">
+            <summary>
+            編號
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemType.Name">
+            <summary>
+            代碼名稱
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemType.Memo">
+            <summary>
+            備註
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemType.Udate">
+            <summary>
+            更新時間
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemType.Cdate">
+            <summary>
+            建立時間
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemType.Uuser">
+            <summary>
+            更新者
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemType.Cuser">
+            <summary>
+            建立者
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbItemType.Status">
+            <summary>
+            刪除狀態
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbUser.WebChk">
+            <summary>
+            後台登入設定
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbUser.AppChk">
+            <summary>
+            app登入設定
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbUser.Loginerrorcount">
+            <summary>
+            登入錯誤次數
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbUser.Firstlogin">
+            <summary>
+            預設密碼未登入過0，已登入過1
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbUser.Locktime">
+            <summary>
+            鎖定可登入時間(要大於此時間才能再重試)
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbUser.Passwordexpire">
+            <summary>
+            密碼到期時間
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbUser.Finallogintime">
+            <summary>
+            最後一次登入時間
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TbUser.Createtime">
+            <summary>
+            建立時間
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TcDept.ReportVisible">
+            <summary>
+            報表中心是否顯示
+            </summary>
+        </member>
+        <member name="P:WebApplication13.Models.TcDept.CarSystem">
+            <summary>
+            車管區隊 1:是 2:否
+            </summary>
+        </member>
+    </members>
+</doc>

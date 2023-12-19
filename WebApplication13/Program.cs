@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
 using WebApplication13.Models;
+using WebApplication13.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var corsOrigins = builder.Configuration.GetSection("AllowOrigins").Get<string[]>();
@@ -18,6 +19,13 @@ builder.Services.AddSession(options =>
  
 });
 builder.Services.AddScoped<JwtToken>();
+builder.Services.AddScoped<LoginService>();
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<Cog1Service>();
+
+
+
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
