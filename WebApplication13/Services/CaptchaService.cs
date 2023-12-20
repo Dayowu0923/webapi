@@ -1,40 +1,21 @@
-﻿using Microsoft.AspNetCore.DataProtection;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Distributed;
+﻿using Microsoft.Extensions.Caching.Distributed;
 using SkiaSharp;
-using System;
-using System.IO;
-using System.Linq;
 
-namespace WebApplication13.Controllers
+namespace WebApplication13.Services
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class CaptchaServiceController : ControllerBase
+    public class CaptchaService
     {
-
         private readonly IDistributedCache _cache;
-        public CaptchaServiceController(IDistributedCache cache)
+        public CaptchaService(IDistributedCache cache)
         {
             _cache = cache;
         }
-
-        [HttpGet]
-        public IActionResult GetCaptcha()
-        {
-            var (captchaCode, captchaImage) = GenerateCaptcha();
-            HttpContext.Session.SetString("CaptchaCode", captchaCode);
-            var options = new DistributedCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromMinutes(5));
-            _cache.SetStringAsync("CaptchaCode", captchaCode, options);
-            return File(captchaImage, "image/jpeg");
-        }
-        [HttpGet("new")]
-        public IActionResult GetNewCaptcha()
+        public byte[] GetCaptcha()
         {
             var (captchaCode, captchaImage) = GenerateCaptcha();
             var options = new DistributedCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromMinutes(5));
             _cache.SetStringAsync("CaptchaCode", captchaCode, options);
-            return File(captchaImage, "image/jpeg");
+            return captchaImage;
         }
         private (string CaptchaCode, byte[] CaptchaImage) GenerateCaptcha()
         {
@@ -42,7 +23,6 @@ namespace WebApplication13.Controllers
             byte[] captchaImage = GenerateCaptchaImage(captchaCode);
             return (captchaCode, captchaImage);
         }
-
         private string GenerateRandomCode(int length = 6)
         {
             var random = new Random();
@@ -57,7 +37,6 @@ namespace WebApplication13.Controllers
         {
             int width = 200;
             int height = 50;
-
             using (var surface = SKSurface.Create(new SKImageInfo(width, height)))
             {
                 var canvas = surface.Canvas;

@@ -960,6 +960,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Moq": "4.20.70",
           "SkiaSharp": "2.88.6",
           "Swashbuckle.AspNetCore": "6.4.0"
         },

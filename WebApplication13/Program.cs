@@ -1,9 +1,11 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
 using WebApplication13.Models;
+using WebApplication13.Profiles;
 using WebApplication13.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,18 +22,20 @@ builder.Services.AddSession(options =>
 });
 builder.Services.AddScoped<JwtToken>();
 builder.Services.AddScoped<LoginService>();
-builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<Cog1Service>();
-
+builder.Services.AddScoped<CogItemService>();
+builder.Services.AddScoped<CaptchaService>();
 
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDataProtection();
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
 builder.Services.AddDbContext<_2023gtafContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseConn")));
 builder.Services.AddSwaggerGen(options =>
@@ -57,7 +61,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ClockSkew = TimeSpan.Zero
         };
     });
-// 加入 CORS 服務
 const string OriginsFromSetting = "OriginsFromAppSettingsJson";
 builder.Services.AddCors(options => {
     options.AddPolicy(
@@ -67,15 +70,12 @@ builder.Services.AddCors(options => {
              .WithOrigins(corsOrigins)
              .AllowAnyMethod()
              .AllowAnyHeader()
-             .AllowCredentials(); // 允許跨域 Cookies
+             .AllowCredentials();
     }
     );
 });
-
-// 啟用 CORS Middleware
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

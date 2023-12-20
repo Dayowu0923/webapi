@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -12,12 +13,14 @@ namespace WebApplication13.Services
         private readonly IConfiguration _configuration;
         private readonly IDistributedCache _cache;
         private readonly _2023gtafContext _gtafContext;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public JwtToken(IConfiguration configuration, IDistributedCache cache, _2023gtafContext gtafContext)
+        public JwtToken(IConfiguration configuration, IDistributedCache cache, _2023gtafContext gtafContext, IHttpContextAccessor httpContextAccessor)
         {
             _configuration = configuration;
             _cache = cache;
             _gtafContext = gtafContext;
+            _httpContextAccessor = httpContextAccessor;
         }
         private string GenerateJwtToken(string username)
         {
@@ -51,12 +54,16 @@ namespace WebApplication13.Services
             var userIdClaim = jwtToken.Claims.FirstOrDefault(claim => claim.Type == "sub");
             return userIdClaim.Value;
         }
-
-        //[HttpGet("securedata")]
-        //[Authorize]
-        //public IActionResult GetSecureData()
-        //{
-        //    return Ok("測試保護資料");
-        //}
+        public string GetUser()
+        {
+            var user = "";
+            var token = _httpContextAccessor.HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            if (token != null)
+            {
+                user = ClaimToken(token);
+            }
+            return user;
+        }
+      
     }
 }
