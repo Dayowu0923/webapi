@@ -4,12 +4,16 @@ using WebApplication13.Models;
 
 namespace WebApplication13.Services
 {
-    public class LoginService
+    public interface IAuthenticationService
+    {
+        IActionResult Login(LoginModel login);
+    }
+    public class LoginService : IAuthenticationService
     {
         private readonly IDistributedCache _cache;
         private readonly _2023gtafContext _gtafContext;
-        private readonly JwtToken _auth;
-        public LoginService(IDistributedCache cache, _2023gtafContext gtafContext, JwtToken auth)
+        private readonly IJwtToken _auth;
+        public LoginService(IDistributedCache cache, _2023gtafContext gtafContext, IJwtToken auth)
         {
             _cache = cache;
             _gtafContext = gtafContext;

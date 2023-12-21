@@ -8,8 +8,8 @@ namespace WebApplication13.Controllers
     [Route("api/[controller]")]
     public class LoginController : ControllerBase
     {
-        private readonly LoginService _loginService;
-        public LoginController(LoginService loginService)
+        private readonly IAuthenticationService _loginService;
+        public LoginController(IAuthenticationService loginService)
         {
             _loginService = loginService;
         }

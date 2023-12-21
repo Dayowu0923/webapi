@@ -6,13 +6,23 @@ using WebApplication13.Models;
 
 namespace WebApplication13.Services
 {
-    public class CogItemService
+    public interface ICogItemService
+    {
+        Task<IActionResult> Get();
+        Task<IActionResult> Get(int id);
+        Task<IActionResult> Post(TbItemCodeDto value);
+        Task<IActionResult> Put(int id, TbItemCodeDto value);
+        Task<IActionResult> Delete(int id);
+    }
+
+
+    public class CogItemService : ICogItemService
     {
         private readonly _2023gtafContext _gtafContext;
         private readonly IMapper _imapper;
-        private readonly JwtToken _auth;
+        private readonly IJwtToken _auth;
 
-        public CogItemService(_2023gtafContext gtafContext, IMapper imapper, JwtToken auth)
+        public CogItemService(_2023gtafContext gtafContext, IMapper imapper, IJwtToken auth)
         {
             _gtafContext = gtafContext;
             _imapper = imapper;

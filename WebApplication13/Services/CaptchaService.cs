@@ -3,7 +3,11 @@ using SkiaSharp;
 
 namespace WebApplication13.Services
 {
-    public class CaptchaService
+    public interface ICaptchaService
+    {
+        byte[] GetCaptcha();
+    }
+    public class CaptchaService: ICaptchaService
     {
         private readonly IDistributedCache _cache;
         public CaptchaService(IDistributedCache cache)
@@ -13,10 +17,10 @@ namespace WebApplication13.Services
         public byte[] GetCaptcha()
         {
             var (captchaCode, captchaImage) = GenerateCaptcha();
-            var options = new DistributedCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromMinutes(5));
-            _cache.SetStringAsync("CaptchaCode", captchaCode, options);
+            CacheCaptchaCode(captchaCode);
             return captchaImage;
         }
+
         private (string CaptchaCode, byte[] CaptchaImage) GenerateCaptcha()
         {
             string captchaCode = GenerateRandomCode();
@@ -32,7 +36,11 @@ namespace WebApplication13.Services
             .Select(s => s[random.Next(s.Length)]).ToArray());
             return code;
         }
-
+        private void CacheCaptchaCode(string captchaCode)
+        {
+            var options = new DistributedCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromMinutes(5));
+            _cache.SetStringAsync("CaptchaCode", captchaCode, options);
+        }
         private byte[] GenerateCaptchaImage(string code)
         {
             int width = 200;

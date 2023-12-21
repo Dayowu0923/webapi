@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -8,18 +7,20 @@ using WebApplication13.Models;
 
 namespace WebApplication13.Services
 {
-    public class JwtToken
+    public interface IJwtToken
+    {
+        public string CreateTokenForUser(string username);
+        public string ClaimToken(string token);
+        public string GetUser();
+    }
+    public class JwtToken : IJwtToken
     {
         private readonly IConfiguration _configuration;
-        private readonly IDistributedCache _cache;
-        private readonly _2023gtafContext _gtafContext;
-        private readonly IHttpContextAccessor _httpContextAccessor;
 
+        private readonly IHttpContextAccessor _httpContextAccessor;
         public JwtToken(IConfiguration configuration, IDistributedCache cache, _2023gtafContext gtafContext, IHttpContextAccessor httpContextAccessor)
         {
             _configuration = configuration;
-            _cache = cache;
-            _gtafContext = gtafContext;
             _httpContextAccessor = httpContextAccessor;
         }
         private string GenerateJwtToken(string username)
@@ -39,14 +40,12 @@ namespace WebApplication13.Services
                 expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: credentials
             );
-
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-        public virtual string CreateTokenForUser(string username)
+        public  string CreateTokenForUser(string username)
         {
             return GenerateJwtToken(username);
         }
-
         public string ClaimToken(string token)
         {
             var handler = new JwtSecurityTokenHandler();

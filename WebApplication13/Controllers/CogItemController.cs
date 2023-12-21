@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication13.Models;
-using AutoMapper;
 using WebApplication13.Dtos;
 using WebApplication13.Services;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,18 +10,11 @@ namespace WebApplication13.Controllers
     [ApiController]
     public class CogItemController : ControllerBase
     {
-        private readonly _2023gtafContext _gtafContext;
-        private readonly IMapper _imapper;
-        private readonly JwtToken _auth;
-        private readonly CogItemService _cogItem;
-        public CogItemController(_2023gtafContext gtafContext, IMapper imapper, JwtToken auth, CogItemService cogItem)
+        private readonly ICogItemService _cogItem;
+        public CogItemController(ICogItemService cogItem)
         {
-            _gtafContext = gtafContext;
-            _imapper = imapper;
-            _auth = auth;
             _cogItem = cogItem;
         }
-
         // GET: api/<CogItem>
         [HttpGet]
         [Authorize]
@@ -48,7 +39,6 @@ namespace WebApplication13.Controllers
         {
             return await _cogItem.Post(value);
         }
-
         // PUT api/<CogItem>/5
         [HttpPut("{id}")]
         [Authorize]

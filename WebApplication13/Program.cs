@@ -20,11 +20,11 @@ builder.Services.AddSession(options =>
 
  
 });
-builder.Services.AddScoped<JwtToken>();
-builder.Services.AddScoped<LoginService>();
-builder.Services.AddScoped<Cog1Service>();
-builder.Services.AddScoped<CogItemService>();
-builder.Services.AddScoped<CaptchaService>();
+builder.Services.AddScoped<IJwtToken, JwtToken>();
+builder.Services.AddScoped<IAuthenticationService,LoginService>();
+builder.Services.AddScoped<ICog1Service,Cog1Service>();
+builder.Services.AddScoped<ICogItemService, CogItemService>();
+builder.Services.AddScoped<ICaptchaService,CaptchaService>();
 
 
 builder.Services.AddHttpContextAccessor();

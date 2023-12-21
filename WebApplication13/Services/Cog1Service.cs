@@ -5,13 +5,21 @@ using WebApplication13.Dtos;
 using Microsoft.EntityFrameworkCore;
 namespace WebApplication13.Services
 {
-    public class Cog1Service
+    public interface ICog1Service
+    {
+        Task<IActionResult> Get();
+        Task<IActionResult> Get(int id);
+        Task<IActionResult> Post(TbItemTypeDto value);
+        Task<IActionResult> Put(int id, TbItemTypeDto value);
+        Task<IActionResult> Delete(int id);
+    }
+    public class Cog1Service : ICog1Service
     {
         private readonly _2023gtafContext _gtafContext;
         private readonly IMapper _imapper;
-        private readonly JwtToken _auth;
+        private readonly IJwtToken _auth;
 
-        public Cog1Service(_2023gtafContext gtafContext, IMapper imapper, JwtToken auth)
+        public Cog1Service(_2023gtafContext gtafContext, IMapper imapper, IJwtToken auth)
         {
             _gtafContext = gtafContext;
             _imapper = imapper;

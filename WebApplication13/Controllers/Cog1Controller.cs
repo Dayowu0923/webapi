@@ -10,8 +10,8 @@ namespace WebApplication13.Controllers
     [ApiController]
     public class Cog1Controller : ControllerBase
     {
-        private readonly Cog1Service _cog1Service;
-        public Cog1Controller(Cog1Service cog1Service)
+        private readonly ICog1Service _cog1Service;
+        public Cog1Controller(ICog1Service cog1Service)
         {
             _cog1Service = cog1Service;
         }
@@ -20,7 +20,6 @@ namespace WebApplication13.Controllers
         [Authorize]
         public async Task<IActionResult> Get()
         {
-           
             return await _cog1Service.Get();
         }
         // GET api/<Cog1Controller>/5
@@ -30,7 +29,6 @@ namespace WebApplication13.Controllers
         {
             return await _cog1Service.Get(id);
         }
-
         // POST api/<Cog1Controller>
         [HttpPost]
         [Authorize]

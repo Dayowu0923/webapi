@@ -171,3 +171,11 @@ C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\obj\Debug\net8
 C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\obj\Debug\net8.0\ref\WebApplication13Tests.dll
 C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\Castle.Core.dll
 C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\Moq.dll
+C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\NUnit3.TestAdapter.dll
+C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\NUnit3.TestAdapter.pdb
+C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\nunit.engine.dll
+C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\nunit.engine.api.dll
+C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\nunit.engine.core.dll
+C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\testcentric.engine.metadata.dll
+C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\nunit.framework.dll
+C:\Users\user\source\repos\WebApplication13\WebApplication13Tests\bin\Debug\net8.0\nunit.framework.legacy.dll

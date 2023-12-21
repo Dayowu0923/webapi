@@ -1,6 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Distributed;
+﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication13.Services;
 
 namespace WebApplication13.Controllers
@@ -10,11 +8,9 @@ namespace WebApplication13.Controllers
     public class CaptchaController : ControllerBase
     {
 
-        private readonly IDistributedCache _cache;
-        private readonly CaptchaService _captchaService;
-        public CaptchaController(IDistributedCache cache, CaptchaService captchaService)
+        private readonly ICaptchaService _captchaService;
+        public CaptchaController(ICaptchaService captchaService)
         {
-            _cache = cache;
             _captchaService = captchaService;
         }
         [HttpGet]
