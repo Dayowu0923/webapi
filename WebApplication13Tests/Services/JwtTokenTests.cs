@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Http;
-using WebApplication13.Models;
-
 namespace WebApplication13.Services.Tests
 {
     [TestClass()]

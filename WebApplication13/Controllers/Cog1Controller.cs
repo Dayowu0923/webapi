@@ -15,21 +15,17 @@ namespace WebApplication13.Controllers
         {
             _cog1Service = cog1Service;
         }
-        // GET: api/<Cog1Controller>
         [HttpGet]
-        [Authorize]
         public async Task<IActionResult> Get()
         {
             return await _cog1Service.Get();
         }
-        // GET api/<Cog1Controller>/5
         [HttpGet("{id}")]
         [Authorize]
         public async Task<IActionResult> Get(int id)
         {
             return await _cog1Service.Get(id);
         }
-        // POST api/<Cog1Controller>
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Post([FromBody] TbItemTypeDto value)
