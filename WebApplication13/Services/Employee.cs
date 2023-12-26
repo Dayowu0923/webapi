@@ -1,12 +1,12 @@
-﻿namespace WebApplication13.Models
+﻿namespace WebApplication13.Services
 {
     public class Employee
     {
-       public string name { get; set; }
-       public int years {  get; set; }
-       public string sex { get; set; }
-       public int salarytype { get; set; }
-       public int salary { get; set; }
+        public string name { get; set; }
+        public int years { get; set; }
+        public string sex { get; set; }
+        public int salarytype { get; set; }
+        public int salary { get; set; }
     }
     //OCP
     public interface ISalary
@@ -22,7 +22,7 @@
     }
     public class PartTimeSalary : ISalary
     {
-        private int hour {  get; set; }
+        private int hour { get; set; }
         public PartTimeSalary(int _hour)
         {
             hour = _hour;
@@ -43,7 +43,7 @@
         void Coding();
         void Debug();
     }
-    public class Programmer: Employee, IWorkProgrammer
+    public class Programmer : Employee, IWorkProgrammer
     {
         public void Coding()
         {

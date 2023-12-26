@@ -1,4 +1,4 @@
-﻿namespace WebApplication13.Models
+﻿namespace WebApplication13.Services
 {
     //開放封閉原則 (Open/Closed Principle, OCP)
     //形狀的面積算法不固定

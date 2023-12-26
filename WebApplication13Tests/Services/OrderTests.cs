@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace WebApplication13.Models.Tests
+using WebApplication13.Services;
+namespace WebApplication13Tests.Services
 {
     [TestClass()]
     public class OrderTests

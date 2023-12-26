@@ -1,12 +1,11 @@
-﻿
-namespace WebApplication13.Models
+﻿namespace WebApplication13.Services
 {
     public class Books
     {
         public readonly string _name;
         public readonly double _price;
 
-        public Books(string name , double price) 
+        public Books(string name, double price)
         {
             _name = name;
             _price = price;
@@ -24,7 +23,7 @@ namespace WebApplication13.Models
         {
             _discountRate = discountRate;
         }
-        public double CalculatePrice (List<Books> books)
+        public double CalculatePrice(List<Books> books)
         {
             double price = 0;
             while (books.Count >= 2)
@@ -32,7 +31,7 @@ namespace WebApplication13.Models
                 Books firstBook = books[0];
                 books.RemoveAt(0);
                 Books secondBook = books.Find(b => b._name != firstBook._name);
-                if(secondBook != null)
+                if (secondBook != null)
                 {
                     price += (firstBook._price + secondBook._price) * _discountRate;
                     books.Remove(secondBook);
@@ -48,7 +47,7 @@ namespace WebApplication13.Models
     }
     public class Order
     {
-        public List<Books> books  = new List<Books>();
+        public List<Books> books = new List<Books>();
         private List<IDiscountRule> _discountRules = new List<IDiscountRule>();
 
         public void Add_books(Books book)

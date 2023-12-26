@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WebApplication13.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebApplication13.Services;
 
-namespace WebApplication13.Models.Tests
+namespace WebApplication13Tests.Services
 {
     [TestClass()]
     public class CalculateSalaryTests
@@ -18,7 +18,7 @@ namespace WebApplication13.Models.Tests
             Employee fullTimeEmployee = new Employee
             {
                 name = "正式員工",
-                years =35,
+                years = 35,
                 sex = "男",
                 salarytype = 1,
                 salary = 50000
@@ -29,7 +29,7 @@ namespace WebApplication13.Models.Tests
             int result = calculator.Calculate(fullTimeEmployee);
             // Assert
             Assert.AreEqual(fullTimeEmployee.salary, result);
-           
+
         }
         [TestMethod()]
         public void CalculateSalary_PartTimeEmployee_ReturnsCorrectSalary()
