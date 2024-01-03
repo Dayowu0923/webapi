@@ -13,7 +13,3 @@ namespace WebApplication13
 } 
 
 
-
-
-
-
