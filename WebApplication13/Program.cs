@@ -8,6 +8,7 @@ using WebApplication13.Models;
 using WebApplication13.Profiles;
 using WebApplication13.Services;
 
+
 var builder = WebApplication.CreateBuilder(args);
 var corsOrigins = builder.Configuration.GetSection("AllowOrigins").Get<string[]>();
 builder.Services.AddSession(options =>
